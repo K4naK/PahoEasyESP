@@ -239,7 +239,7 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label for="IndexSistemaClima">Informacion Climatica <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requiere condicion climatica obtenida de wunderground.com"></span></label>
-															<input type="url" name="url" class="form-control" placeholder="http://api.wunderground.com/api/f4b4a23c192c5d19/conditions/lang:SP/q/CL/Santiago.json" id="IndexSistemaClima">
+															<input type="url" name="url" class="form-control" placeholder="http://api.wunderground.com/api/tu_apikey/conditions/lang:SP/q/CL/tu_ciudad.json" id="IndexSistemaClima">
 														</div>
 													</div>
 													<div class="col-md-3">

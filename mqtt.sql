@@ -98,6 +98,9 @@ CREATE TABLE SISTEMA
 )
 ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
+INSERT INTO `SISTEMA` (`SIS_ID`, `SIS_NOM`, `SIS_IP`, `SIS_PORT`, `SIS_PAT`, `SIS_USU`, `SIS_PAS`, `SIS_SSL`, `SIS_KEEP`, `SIS_OUT`, `SIS_CLID`, `SIS_CLN`, `SIS_LWT`, `SIS_LWP`, `SIS_QOS`, `SIS_RET`, `SIS_URL`, `SIS_COV`, `SIS_DEF`, `SIS_MAIL1`, `SIS_MAIL2`) VALUES
+(1, 'Eclipse', 'iot.eclipse.org', 80, '/ws', '', '', 0, 120, 5, '', 1, '', '', 0, 0, '', 300, 1, '', '');
+
 /*==============================================================*/
 /* Table: TIPO                                                  */
 /*==============================================================*/

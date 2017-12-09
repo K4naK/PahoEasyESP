@@ -165,7 +165,7 @@
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
-															<label for="IndexSistemaSSL">Certificado SSL/TSL <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requiere certificado de seguridad instalado"></span></label>
+															<label for="IndexSistemaSSL">Certificado SSL/TLS <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requiere certificado de seguridad instalado"></span></label>
 															<input type="checkbox" name="ssl" class="form-control" id="IndexSistemaSSL">
 														</div>
 													</div>

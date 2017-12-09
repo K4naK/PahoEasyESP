@@ -28,6 +28,15 @@ $(document).ready(function(){
 	iniciar();
 	reloj();
 
+	(function(){
+		inactividad = cover;
+		$("#cover").fadeIn("slow",function(){
+			$("#mainContainer").hide(); 
+			protector = true;
+		});
+	})();
+	
+
 	$(function(){
 		$('.colorpicker').each( function() {
 			$(this).minicolors({
@@ -994,7 +1003,7 @@ $(document).ready(function(){
 		$("#estado").html('Conectado a ' + hostname + ':' + port + path);
 		console.log('Conectado a ' + hostname + ':' + port + path);
 		$("#alerta").show("fast");
-		setTimeout(function(){$("#alerta").hide("slow")},3000);
+		setTimeout(function(){$("#alerta").hide("slow")},15000);
 		$('#listaLog').html("");
 		subscribeDevice();
 		sendMessage("1","Dispositivos/Actualizar");	

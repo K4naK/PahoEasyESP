@@ -67,7 +67,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click","button.pad.aceptar",function(){
-		if($("#IndexInputPad").val() == "1315"){
+		if($("#IndexInputPad").val() == coverKey){
 			screenSaverOff();
 			clearTimeout(padToCover);
 			$("#IndexInputPad").val("");
@@ -183,6 +183,7 @@ $(document).ready(function(){
 				$("#IndexSistemaTestamento").val(data[0].lastwillpayload);
 				$("#IndexSistemaClima").val(data[0].url);
 				$("#IndexSistemaCover").val(data[0].espera);
+				$("#IndexSistemaKeyCover").val(data[0].coverKey);
 				$("#IndexSistemaMail1").val(data[0].mail1);
 				$("#IndexSistemaMail2").val(data[0].mail2);
 				$("#IndexFormGuardar").show();
@@ -207,6 +208,7 @@ $(document).ready(function(){
 				lastWillQos = data[0].qos;
 				lastWillRetain = data[0].retained;
 				cover=data[0].espera;
+				coverKey =data[0].coverKey;
 			}
 		});
 	});
@@ -726,6 +728,7 @@ $(document).ready(function(){
 					lastWillQos = data[0].qos;
 					lastWillRetain = data[0].retained;
 					cover=data[0].espera;
+					coverKey = data[0].coverKey;
 					url=data[0].url;
 
 
@@ -747,6 +750,7 @@ $(document).ready(function(){
 					$("#IndexSistemaTestamento").val(data[0].lastwillpayload);
 					$("#IndexSistemaClima").val(data[0].url);
 					$("#IndexSistemaCover").val(data[0].espera);
+					$("#IndexSistemaKeyCover").val(data[0].coverKey);
 					$("#IndexSistemaMail1").val(data[0].mail1);
 					$("#IndexSistemaMail2").val(data[0].mail2);
 					$("#IndexFormHabitacionSistema").val(sistema);

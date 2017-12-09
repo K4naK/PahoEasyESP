@@ -262,7 +262,7 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label for="IndexSistemaMail1">Correo Principal</label>
-															<input type="email" name="mail1" class="form-control" id="IndexSistemaMail1" required>
+															<input type="email" name="mail1" class="form-control" id="IndexSistemaMail1">
 														</div>
 													</div>
 													<div class="col-md-6">

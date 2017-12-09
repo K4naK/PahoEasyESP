@@ -72,7 +72,7 @@
 			$this->con = new conexion();
 		}
 		
-		public function sistema($nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover){
+		public function sistema($nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $coverKey, $mail1, $mail2){
 			$sql = "SELECT * FROM SISTEMA WHERE SIS_DEF=1";
 			$resultado = mysqli_query($this->con->conexion,$sql);
 			if($fila = mysqli_fetch_assoc($resultado)){
@@ -80,7 +80,7 @@
 			}else{
 				$default = 1;
 			}
-			$sql = "INSERT INTO SISTEMA(SIS_ID, SIS_NOM, SIS_IP, SIS_PORT, SIS_PAT, SIS_USU, SIS_PAS, SIS_SSL, SIS_KEEP, SIS_OUT, SIS_CLID, SIS_CLN, SIS_LWT, SIS_LWP, SIS_QOS, SIS_RET, SIS_URL, SIS_COV, SIS_DEF, SIS_MAIL1, SIS_MAIL2) VALUES (NULL,'$nom','$ip',$port,'$path','$user','$pass',$ssl,$keep,$out,'$client',$clean,'$lwt','$lwp', $qos, $retain, '$url', $cover, $default, '$mail1', '$mail2')";
+			$sql = "INSERT INTO SISTEMA(SIS_ID, SIS_NOM, SIS_IP, SIS_PORT, SIS_PAT, SIS_USU, SIS_PAS, SIS_SSL, SIS_KEEP, SIS_OUT, SIS_CLID, SIS_CLN, SIS_LWT, SIS_LWP, SIS_QOS, SIS_RET, SIS_URL, SIS_COV, SIS_COV_KEY, SIS_DEF, SIS_MAIL1, SIS_MAIL2) VALUES (NULL,'$nom','$ip',$port,'$path','$user','$pass',$ssl,$keep,$out,'$client',$clean,'$lwt','$lwp', $qos, $retain, '$url', $cover, $coverKey, $default, '$mail1', '$mail2')";
 			mysqli_query($this->con->conexion,$sql);
 			$resultado = mysqli_affected_rows($this->con->conexion);
 			return $resultado;
@@ -116,8 +116,8 @@
 			$this->con = new conexion();
 		}
 		
-		public function sistema($id,$nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $mail1, $mail2){
-			$sql = "UPDATE SISTEMA SET SIS_NOM='$nom',SIS_IP='$ip',SIS_PORT=$port,SIS_PAT='$path',SIS_USU='$user',SIS_PAS='$pass',SIS_SSL=$ssl,SIS_KEEP=$keep,SIS_OUT=$out,SIS_CLID='$client',SIS_CLN=$clean,SIS_LWT='$lwt',SIS_LWP='$lwp',SIS_QOS=$qos,SIS_RET=$retain,SIS_URL='$url',SIS_COV=$cover, SIS_MAIL1 = '$mail1', SIS_MAIL2 = '$mail2' WHERE SIS_ID=$id";
+		public function sistema($id,$nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $coverKey, $mail1, $mail2){
+			$sql = "UPDATE SISTEMA SET SIS_NOM='$nom',SIS_IP='$ip',SIS_PORT=$port,SIS_PAT='$path',SIS_USU='$user',SIS_PAS='$pass',SIS_SSL=$ssl,SIS_KEEP=$keep,SIS_OUT=$out,SIS_CLID='$client',SIS_CLN=$clean,SIS_LWT='$lwt',SIS_LWP='$lwp',SIS_QOS=$qos,SIS_RET=$retain,SIS_URL='$url',SIS_COV=$cover, SIS_COV_KEY=$coverKey, SIS_MAIL1 = '$mail1', SIS_MAIL2 = '$mail2' WHERE SIS_ID=$id";
 			mysqli_query($this->con->conexion,$sql);
 			$resultado = mysqli_affected_rows($this->con->conexion);
 			return $resultado;

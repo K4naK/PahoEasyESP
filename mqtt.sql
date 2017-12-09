@@ -91,6 +91,7 @@ CREATE TABLE SISTEMA
    SIS_RET              TINYINT(1) DEFAULT NULL,
    SIS_URL              VARCHAR(100),
    SIS_COV              INT(11) DEFAULT NULL,
+   SIS_COV_KEY          INT(11),
    SIS_DEF              TINYINT(1) DEFAULT NULL,
    SIS_MAIL1            VARCHAR(50),
    SIS_MAIL2            VARCHAR(50),
@@ -98,8 +99,8 @@ CREATE TABLE SISTEMA
 )
 ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
-INSERT INTO `SISTEMA` (`SIS_ID`, `SIS_NOM`, `SIS_IP`, `SIS_PORT`, `SIS_PAT`, `SIS_USU`, `SIS_PAS`, `SIS_SSL`, `SIS_KEEP`, `SIS_OUT`, `SIS_CLID`, `SIS_CLN`, `SIS_LWT`, `SIS_LWP`, `SIS_QOS`, `SIS_RET`, `SIS_URL`, `SIS_COV`, `SIS_DEF`, `SIS_MAIL1`, `SIS_MAIL2`) VALUES
-(1, 'Eclipse', 'iot.eclipse.org', 80, '/ws', '', '', 0, 120, 5, '', 1, '', '', 0, 0, '', 300, 1, '', '');
+INSERT INTO `SISTEMA` (`SIS_ID`, `SIS_NOM`, `SIS_IP`, `SIS_PORT`, `SIS_PAT`, `SIS_USU`, `SIS_PAS`, `SIS_SSL`, `SIS_KEEP`, `SIS_OUT`, `SIS_CLID`, `SIS_CLN`, `SIS_LWT`, `SIS_LWP`, `SIS_QOS`, `SIS_RET`, `SIS_URL`, `SIS_COV`, `SIS_COV_KEY`, `SIS_DEF`, `SIS_MAIL1`, `SIS_MAIL2`) VALUES
+(1, 'Eclipse', 'iot.eclipse.org', 80, '/ws', '', '', 0, 120, 3, '', 1, '', '', 0, 0, '', 300, 1234, 1, 'ejemplo@ejemplo.com', '');
 
 /*==============================================================*/
 /* Table: TIPO                                                  */
@@ -112,7 +113,9 @@ CREATE TABLE TIPO
 )
 ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
-INSERT INTO `tipo` (`TIPO_ID`, `TIPO_NOM`) VALUES (NULL, 'Switch'), (NULL, 'Sensor');
+INSERT INTO `TIPO` (`TIPO_ID`, `TIPO_NOM`) VALUES
+(1, 'Switch'),
+(2, 'Sensor');
 
 ALTER TABLE DISPOSITIVO ADD CONSTRAINT FK_REFERENCE_1 FOREIGN KEY (HAB_ID)
       REFERENCES HABITACION (HAB_ID);

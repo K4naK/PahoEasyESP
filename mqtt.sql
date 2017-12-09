@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS TIPO;
 /*==============================================================*/
 CREATE TABLE DISPOSITIVO
 (
-   DIS_ID               INT(11) NOT NULL,
+   DIS_ID               INT(11) NOT NULL AUTO_INCREMENT,
    HAB_ID               INT(11) DEFAULT NULL,
    TIPO_ID              INT(11) DEFAULT NULL,
    DIS_NOM              VARCHAR(30),
@@ -31,7 +31,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 /*==============================================================*/
 CREATE TABLE HABITACION
 (
-   HAB_ID               INT(11) NOT NULL,
+   HAB_ID               INT(11) NOT NULL AUTO_INCREMENT,
    SIS_ID               INT(11) DEFAULT NULL,
    HAB_NOM              VARCHAR(30),
    PRIMARY KEY (HAB_ID)
@@ -43,7 +43,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 /*==============================================================*/
 CREATE TABLE LOG
 (
-   LOG_ID               INT(11) NOT NULL,
+   LOG_ID               INT(11) NOT NULL AUTO_INCREMENT,
    DIS_ID               INT(11) DEFAULT NULL,
    LOG_VAL              VARCHAR(10),
    LOG_FEC              DATE DEFAULT NULL,
@@ -56,7 +56,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 /*==============================================================*/
 CREATE TABLE MONITOR
 (
-   MON_ID               INT(11) NOT NULL,
+   MON_ID               INT(11) NOT NULL AUTO_INCREMENT,
    SIS_ID               INT(11) DEFAULT NULL,
    MON_DIS_IN           INT(11) DEFAULT NULL,
    MON_VAL_IN           VARCHAR(15),
@@ -73,7 +73,7 @@ ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 /*==============================================================*/
 CREATE TABLE SISTEMA
 (
-   SIS_ID               INT(11) NOT NULL,
+   SIS_ID               INT(11) NOT NULL AUTO_INCREMENT,
    SIS_NOM              VARCHAR(30),
    SIS_IP               VARCHAR(20),
    SIS_PORT             INT(11) DEFAULT NULL,
@@ -106,7 +106,7 @@ INSERT INTO `SISTEMA` (`SIS_ID`, `SIS_NOM`, `SIS_IP`, `SIS_PORT`, `SIS_PAT`, `SI
 /*==============================================================*/
 CREATE TABLE TIPO
 (
-   TIPO_ID              INT(11) NOT NULL,
+   TIPO_ID              INT(11) NOT NULL AUTO_INCREMENT,
    TIPO_NOM             VARCHAR(15),
    PRIMARY KEY (TIPO_ID)
 )

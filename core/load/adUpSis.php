@@ -18,16 +18,17 @@
 	$retain = (isset($_POST["retain"]) || !empty($_POST["retain"]))?1:0;
 	$url = $_POST["url"];
 	$cover = $_POST["cover"];
+	$coverKey = $_POST["keyCover"];
 	$mail1 = $_POST["mail1"];
 	$mail2 = $_POST["mail2"];
 
 	if($id==0){
 		$insert = new insert();
-		$sistema = $insert->sistema($nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover,$mail1,$mail2);
+		$sistema = $insert->sistema($nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $coverKey, $mail1, $mail2);
 		echo ($sistema>0)?"1":"0";
 	}else if($id>0){
 		$update = new update();
-		$sistema = $update->sistema($id,$nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $mail1, $mail2);
+		$sistema = $update->sistema($id,$nom,$ip,$port,$path,$user,$pass,$ssl,$keep,$out,$client,$clean,$lwt,$lwp, $qos, $retain, $url, $cover, $coverKey, $mail1, $mail2);
 		echo ($sistema>0)?"2":"0";
 	}
 ?>

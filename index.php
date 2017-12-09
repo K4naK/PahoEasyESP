@@ -245,7 +245,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<label for="IndexSistemaCover">Tiempo de Espera</label>
-															<input type="number" name="cover" min="10" value="30" class="form-control" id="IndexSistemaCover">
+															<input type="number" name="cover" min="10" value="30" class="form-control" id="IndexSistemaCover" required>
 														</div>
 													</div>
 													<div class="col-md-3">

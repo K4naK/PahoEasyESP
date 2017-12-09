@@ -239,13 +239,19 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label for="IndexSistemaClima">Informacion Climatica <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requiere condicion climatica obtenida de wunderground.com"></span></label>
-															<input type="url" name="url" class="form-control" placeholder="http://api.wunderground.com/api/tu_apikey/conditions/lang:SP/q/CL/tu_ciudad.json" id="IndexSistemaClima">
+															<input type="url" name="url" class="form-control" placeholder="http://api.wunderground.com/api/TU_APIKEY/conditions/lang:SP/q/CL/TU_CIUDAD.json" id="IndexSistemaClima">
 														</div>
 													</div>
 													<div class="col-md-3">
 														<div class="form-group">
 															<label for="IndexSistemaCover">Tiempo de Espera</label>
 															<input type="number" name="cover" min="10" value="30" class="form-control" id="IndexSistemaCover">
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="IndexSistemaKeyCover">Clave de protector</label>
+															<input type="password" name="keyCover" required class="form-control" id="IndexSistemaKeyCover" pattern="[0-9]{4,}">
 														</div>
 													</div>
 												</div>
